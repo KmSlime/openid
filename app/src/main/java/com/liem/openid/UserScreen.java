@@ -11,23 +11,26 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 public class UserScreen extends AppCompatActivity {
 
     GoogleSignInOptions googleSignInOptions;
     GoogleSignInClient googleSignInClient;
     Button btnSignOut;
-    ImageView imgAvata;
-    EditText edtToken, edtEmail, edtUserFullName;
+    RoundedImageView imgAvata;
+    EditText edtEmail, edtUserFullName;
 
     String personFullName, personEmail, IdToken, Token;
     GoogleSignInAccount currentAccount;
+    public static String GoogleAccount = "Google return values";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +39,6 @@ public class UserScreen extends AppCompatActivity {
 
         btnSignOut = findViewById(R.id.btnSignOut);
         imgAvata = findViewById(R.id.imgAvata);
-        edtToken = findViewById(R.id.edtToken);
         edtEmail = findViewById(R.id.edtEmail);
         edtUserFullName = findViewById(R.id.edtUserFullName);
 
@@ -64,17 +66,35 @@ public class UserScreen extends AppCompatActivity {
 
     public void InitAccount(){
         if(currentAccount != null){
+            String avtUrl = String.valueOf(currentAccount.getPhotoUrl());
+
+            Glide.with(this)
+                    .load(avtUrl)
+                    .error(R.drawable.default_avatar)
+                    .placeholder(R.drawable.default_avatar)
+                    .into(imgAvata);
             personFullName = currentAccount.getDisplayName();
             personEmail = currentAccount.getEmail();
-            IdToken = currentAccount.getIdToken();
-            Log.v("Return value", personFullName + "" + personEmail + IdToken);
+            Log.v(GoogleAccount, "email: " + personEmail);
+            Log.v(GoogleAccount, "display name: " + currentAccount.getDisplayName());
+            Log.v(GoogleAccount, "fullname: " + personFullName);
+            Log.v(GoogleAccount, "zac: " + currentAccount.zac());
+            Log.v(GoogleAccount, "avt url: " + avtUrl);
+            Log.v(GoogleAccount, "zad: " + currentAccount.zad());
+            Log.v(GoogleAccount, "id: " + currentAccount.getId());
+            Log.v(GoogleAccount, "family name: " + currentAccount.getFamilyName());
+            Log.v(GoogleAccount, "given name: " + currentAccount.getGivenName());
+            Log.v(GoogleAccount, "idToken: " + currentAccount.getIdToken());
+            Log.v(GoogleAccount, "server auth code: " + currentAccount.getServerAuthCode());
+            Log.v(GoogleAccount, "hash code: " + currentAccount.hashCode());
+
         }
+
     }
 
     public void InitScreen(){
         edtEmail.setText(personEmail);
         edtUserFullName.setText(personFullName);
-        edtToken.setText(IdToken);
 
     }
 

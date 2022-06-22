@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".UserScreen">
 
     <ScrollView
@@ -175,113 +176,7 @@
                     android:textColor="@color/white"
                     android:textSize="25dp" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="Token"
-                    android:textColor="@color/white"
-                    android:textSize="20dp" />
 
-
-                    <EditText
-                        android:id="@+id/edtToken"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center|left"
-                        android:background="@drawable/rounded_corner_without_border_dark"
-                        android:enabled="false"
-                        android:paddingStart="10dp"
-                        android:singleLine="true"
-                        android:textColor="@color/white"
-                        android:textSize="25dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="Giới tính"
-                    android:textColor="@color/white"
-                    android:textSize="20dp" />
-
-                <RadioGroup
-                    android:id="@+id/rad_group_gender"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/rounded_corner_without_border_dark"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:singleLine="true"
-                    android:textColor="@color/white">
-
-                    <RadioButton
-                        android:id="@+id/radioMale"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Nam"
-                        android:textColor="@color/white"
-                        android:textSize="25dp" />
-
-                    <RadioButton
-                        android:id="@+id/radioFemale"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Nữ"
-                        android:textColor="@color/white"
-                        android:textSize="25dp" />
-
-                </RadioGroup>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="Số điện thoại"
-                    android:textColor="@color/white"
-                    android:textSize="20dp" />
-
-                <EditText
-                    android:id="@+id/edtPhoneNum"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|left"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/rounded_corner_without_border_dark"
-                    android:inputType="phone"
-                    android:paddingStart="10dp"
-                    android:singleLine="true"
-                    android:textColor="@color/white"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="Địa chỉ"
-                    android:textColor="@color/white"
-                    android:textSize="20dp" />
-
-                <EditText
-                    android:id="@+id/edtAddress"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|left"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/rounded_corner_without_border_dark"
-                    android:paddingStart="10dp"
-                    android:singleLine="true"
-                    android:textColor="@color/white"
-                    android:textSize="25dp" />
 
             </LinearLayout>
 
